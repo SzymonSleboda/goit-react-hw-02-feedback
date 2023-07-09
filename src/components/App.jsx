@@ -1,16 +1,16 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+import React, { Component } from 'react';
+import s from './App.module.css';
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+
+class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+}
+onLeaveFeedback = state => {
+  this.setState(prevState => ({
+    [state]: prevState[state] + 1,
+  }));
 };
